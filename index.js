@@ -80,8 +80,8 @@ app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   
   const transporter = nodemailer.createTransport({
-    host: smtp.mail.ru,
-    port:465,
+    host: imap.mail.ru,
+    port:993,
     secure: false,
     auth: {
       user: 'testreckord@mail.ru',
@@ -114,3 +114,4 @@ const PORT = 4444; app.listen(PORT, (err) => {
 });
 // testreckord
 // etrovtriper
+// FzB2S4VExpBHekDBmthu
