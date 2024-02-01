@@ -80,8 +80,8 @@ app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   
   const transporter = nodemailer.createTransport({
-    host: pop.mail.ru,
-    port:995,
+    host: smtp.mail.ru,
+    port:465,
     secure: false,
     auth: {
       user: 'testreckord@mail.ru',
