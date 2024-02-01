@@ -80,8 +80,8 @@ app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   
   const transporter = nodemailer.createTransport({
-    host: 'smtp.mail.ru',
-    port: 465,
+    host: 'imap.mail.ru',
+    port:993,
     secure: false,
     auth: {
       user: 'testreckord@mail.ru',
@@ -105,13 +105,6 @@ app.post('/send-email', (req, res) => {
       res.send('Success');
     }
   });
-});
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://rocked.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
 });
 
 const PORT = 4444; app.listen(PORT, (err) => {
