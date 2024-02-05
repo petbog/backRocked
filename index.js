@@ -23,6 +23,7 @@ app.post('/send-email', (req, res) => {
 
   const { name, email, message } = req.body;
 
+  console.log(name, email, message)
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
