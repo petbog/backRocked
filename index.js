@@ -8,9 +8,9 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
-config()
+
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://rocked.vercel.app');
+  res.setHeader('Access-Control-Allow-Origin', 'https://rocked.vercel.app/*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
