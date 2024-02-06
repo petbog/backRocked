@@ -21,9 +21,9 @@ app.get("/", (req, res) => { res.send('работает'); });
 
 app.post('/send-email', (req, res) => {
 
-  const { name, email, message } = req.body;
+  const { name, email, phone } = req.body;
 
-  console.log(name, email, message)
+  console.log(name, email, phone)
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -36,8 +36,8 @@ app.post('/send-email', (req, res) => {
   const mailOptions = {
     from: 'testrendermail@gmail.com',
     to: 'bogdan_emdetei_petrov@mail.ru',
-    subject: 'письмо отправленнное через hode.js',
-    text: `${name}, ${email}, ${message}`,
+    subject: 'письмо отправленнное через node.js',
+    text: ` ваше имя ${name}, ваш email ${email}, ваш номер телефона ${phone}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
