@@ -35,7 +35,7 @@ app.post('/send-email', (req, res) => {
 
   const mailOptions = {
     from: 'testrendermail@gmail.com',
-    to: 'PetrovBogdanTest@yandex.ru',
+    to: 'rbru-metrika@yandex.ru',
     subject: 'письмо отправленнное через node.js',
     text: ` ваше имя ${name}, ваш email ${email}, ваш номер телефона ${phone}`,
   };
